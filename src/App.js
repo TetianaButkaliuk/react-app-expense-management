@@ -1,8 +1,9 @@
+import { useState } from "react";
 import Costs from "./components/Costs/Costs";
 import NewCost from "./components/NewCost/NewCost";
 import "./index.css";
 
-const cost = [
+const initialCosts = [
   {
     date: new Date(2023, 9, 30),
     description: "Airpods",
@@ -24,15 +25,18 @@ const cost = [
 ];
 
 function App() {
+  const [costs, setCosts] = useState(initialCosts);
+
   const addCostHadler = (cost) => {
-    console.log(cost);
-    console.log("App component");
+    setCosts((prevCosts) => {
+      return [cost, ...prevCosts];
+    });
   };
   return (
     <div className="App">
       <h1 className="title">Expense-management</h1>
       <NewCost onAddCost={addCostHadler} />
-      <Costs cost={cost} />;
+      <Costs cost={costs} />;
     </div>
   );
 }
