@@ -10,13 +10,13 @@ const cost = [
     id: "c1",
   },
   {
-    date: new Date(2023, 8, 4),
+    date: new Date(2022, 8, 4),
     description: "MacBook",
     amount: 4299.99,
     id: "c2",
   },
   {
-    date: new Date(2023, 7, 18),
+    date: new Date(2021, 7, 18),
     description: "Iphone",
     amount: 999.99,
     id: "c3",
